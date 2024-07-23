@@ -9,6 +9,7 @@ body {
     @apply font-roboto bg-neutral;
     overflow-x: hidden;
     font-size: 20px;
+    scroll-behavior: smooth;
 }
 
 nav ul li:not(:last-child) {
@@ -24,6 +25,10 @@ nav ul li:not(:last-child) {
 .content {
     opacity: 0;
     animation: fadeInFromLeft 1s forwards;
+}
+
+.mobile-tablet nav ul li {
+    @apply w-full border-b border-darkGreen
 }
 
 
