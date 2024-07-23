@@ -3,6 +3,7 @@ import Advertisement from "../components/sections/Advertisement.jsx";
 import About from "../components/sections/About.jsx";
 import Products from "../components/sections/Products.jsx";
 import Testimonials from "../components/sections/Testimonials.jsx";
+import WhatWeOffer from "../components/sections/WhatWeOffer.jsx";
 
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <About />
             <Products />
             <Testimonials />
+            <WhatWeOffer />
         </>
     );
 }

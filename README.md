@@ -21,3 +21,7 @@ To get a local copy up and running, follow these steps:
     ```sh
     npm install
     ```
+4. Run the development server:
+    ```sh
+    npm run dev
+    ```

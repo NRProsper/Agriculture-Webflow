@@ -1,9 +1,8 @@
-import Star from "./Star.jsx";
 import StarRating from "./StarRating.jsx";
 
 const ProductCard = ({product, className}) => {
     return(
-        <div className="border-gray  rounded-[8px]">
+        <div className="border-gray bg-neutral  rounded-[8px]">
             <div className={`top ${className} relative`}>
                 <img
                     src={product.image}

@@ -7,7 +7,7 @@ const Testimonials = () => {
     return (
         <section
             id={"testimonials"}
-            className="my-[150px] lg:h-[1000px] xl:h-[1267px]"
+            className="mt-[150px] h-[1200px] xl:h-[1267px]"
             style={{
                 backgroundImage: `url(${bg})`,
                 backgroundSize: "cover",
@@ -16,7 +16,7 @@ const Testimonials = () => {
         >
             <div className="container mx-auto h-full">
                 <div className="content px-[60px] lg:px-[146px] h-full flex items-center flex-col justify-center">
-                    <div className="mb-[102px]">
+                    <div className="mb-[60px] xl:mb-[102px]">
                         <h3 className="text-lightGreen text-[36px] font-tail text-center">Testimonials</h3>
                         <h1 className="font-bold text-[50px] text-darkGreen text-center">What Our Customers are Saying?</h1>
                         <div className="testimonial flex items-center justify-center flex-col mt-[60px] gap-[20px]">
@@ -31,7 +31,7 @@ const Testimonials = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="numbers grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-[20px] xl:gap-x-[62px] gap-y-[20px]">
+                    <div className="numbers border-t border-gray pt-[60px] xl:pt-[102px] grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-[20px] xl:gap-x-[62px] gap-y-[20px]">
                         <NumCircle number={"100%"} text={"organic"} />
                         <NumCircle number={"285"} text={"active products"} />
                         <NumCircle number={"250+"} text={"organic orchads"} />
