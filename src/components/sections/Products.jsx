@@ -7,6 +7,7 @@ import product5 from "../../assets/img/products/prod5.png";
 import product6 from "../../assets/img/products/prod6.png";
 import product7 from "../../assets/img/products/prod7.png";
 import product8 from "../../assets/img/products/prod8.png";
+import Button from "../Button.jsx";
 const products = [
     {
         image: product1,
@@ -65,7 +66,7 @@ const Products = () => {
                 <div className="prod-content">
                     <h3 className="text-lightGreen text-[36px] font-tail text-center">Categories</h3>
                     <h1 className="font-bold text-[50px] text-darkGreen text-center">Our Products</h1>
-                    <div className="pruducts grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div className="pruducts mt-[40px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-[40px]">
                         {
                             products.map((product, idx) =>(
                                 <ProductCard
@@ -73,6 +74,11 @@ const Products = () => {
                                 />
                             ))
                         }
+                    </div>
+                    <div className="text-center mt-[40px]">
+                        <Button hasIcon={true} className={"bg-darkGreen"}>
+                            Load More
+                        </Button>
                     </div>
                 </div>
             </div>
