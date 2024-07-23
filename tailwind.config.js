@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundPosition: {
+        'left-half': 'left 50%',
+      },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
         tail: ["Yellowtail", "cursive"],
