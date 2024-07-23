@@ -8,19 +8,41 @@ import {
     FaBarsStaggered as Bars
 } from "react-icons/fa6";
 import {FaTimes as Close} from "react-icons/fa";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const NavBar = () => {
     const navLinks = ["Home", "About", "Shop", "Projects", "News"];
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add("overflow-hidden")
+        }else {
+            document.body.classList.remove("overflow-hidden")
+        }
+
+    }, [isOpen]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            setScrolled(scrollTop > 300);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <header>
+        <header className={scrolled ? `fixed w-full bg-white shadow-lg z-[999] transition-all duration-300` : ``}>
             {/*Mobile and Tablet NavBar*/}
             <div
                 className={`mobile-tablet lg:hidden fixed top-0 left-0 z-[999] w-full h-full bg-neutral transition-transform duration-300 ease-in-out ${isOpen ? "translate-x-0" : "translate-x-full"}`}>
-                <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-between py-4">
+                <div className="container mx-auto px-[16px]">
+                    <div className={`flex items-center justify-between ${scrolled ? `py-[12px] ` : `py-[30px]`}`}>
                         <Link to={"/"} className="logo">
                             <img src={Logo} alt="Agriculture webflow Logo" className="h-10"/>
                         </Link>
@@ -32,7 +54,7 @@ const NavBar = () => {
                         </button>
                     </div>
                     <nav>
-                        <ul className="flex flex-col items-start mt-16 space-y-6">
+                        <ul className="flex flex-col w-full items-start mt-6 space-y-6">
                             {navLinks.map((link, idx) => (
                                 <li className="text-darkGreen" key={idx}>
                                     <Link className="text-2xl px-2 py-1 font-semibold" to={""}>
@@ -42,11 +64,23 @@ const NavBar = () => {
                             ))}
                         </ul>
                     </nav>
+                    <div
+                        className="mt-6 flex md:hidden items-center jus border border-gray rounded-[33px] space-x-2 p-[4px] pr-[20px]">
+                        <Link to={""}
+                              className="h-[56px] w-[56px] bg-darkGreen rounded-full flex items-center justify-center text-neutral">
+                            <Cart size={21}/>
+                        </Link>
+                        <span className="font-bold text-[18px]">Cart (0)</span>
+                    </div>
+                    <div className="footer">
+                        
+                    </div>
                 </div>
             </div>
             {/*Desktop and Laptop Navbar*/}
             <div className="container mx-auto px-[10px] lg:px-0">
-                <div className="navigation relative flex items-center justify-between py-[30px]">
+                <div
+                    className={`navigation relative flex items-center justify-between ${scrolled ? `py-[12px] ` : `py-[30px]`}`}>
                     <div className="flex items-center justify-between space-x-16 xl:space-x-28">
                         <Link to={"/"} className="logo">
                             <img src={Logo} alt="Agriculture webflow Logo"/>
@@ -70,7 +104,7 @@ const NavBar = () => {
                             <Search size={21}/>
                         </Link>
                         <div
-                            className="flex items-center border border-gray rounded-[33px] space-x-2 p-[4px] pr-[20px]">
+                            className="hidden md:flex items-center border border-gray rounded-[33px] space-x-2 p-[4px] pr-[20px]">
                             <Link to={""}
                                   className="h-[56px] w-[56px] bg-darkGreen rounded-full flex items-center justify-center text-neutral">
                                 <Cart size={21}/>
