@@ -1,4 +1,5 @@
 import Star from "./Star.jsx";
+import StarRating from "./StarRating.jsx";
 
 const ProductCard = ({product, className}) => {
     return(
@@ -18,13 +19,7 @@ const ProductCard = ({product, className}) => {
                         <span className="text-[#B8B8B8] font-semibold text-[15px] line-through">$20.00</span>
                         <span className="font-bold text-darkGreen text-[18px]">{`$${product.price}.00`}</span>
                     </div>
-                    <div className="rating flex items-center">
-                        <Star/>
-                        <Star/>
-                        <Star/>
-                        <Star/>
-                        <Star/>
-                    </div>
+                    <StarRating />
                 </div>
             </div>
         </div>
