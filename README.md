@@ -9,12 +9,12 @@ To get a local copy up and running, follow these steps:
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/NProsper/agriculture-webflow.git
+    https://github.com/NRProsper/Agriculture-Webflow.git
     ```
 
 2. Navigate to the project directory:
     ```sh
-    cd agriculture-webflow
+    cd Agriculture-Webflow
     ```
 
 3. Install the dependencies:
