@@ -61,22 +61,18 @@ const products = [
 
 const Products = () => {
     return (
-        <section id={"prods"} className="my-[150px]">
-            <div className="container mx-auto px-[32px] xl:px-16 h-full">
+        <section id="prods" className="my-24">
+            <div className="container mx-auto px-4 xl:px-8 h-full">
                 <div className="prod-content">
-                    <h3 className="text-lightGreen text-[36px] font-tail text-center">Categories</h3>
-                    <h1 className="font-bold text-[50px] text-darkGreen text-center">Our Products</h1>
-                    <div className="pruducts mt-[40px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-[40px]">
-                        {
-                            products.map((product, idx) =>(
-                                <ProductCard
-                                    key={idx} product={product}
-                                />
-                            ))
-                        }
+                    <h3 className="text-lightGreen text-2xl font-tail text-center">Categories</h3>
+                    <h1 className="font-bold text-4xl text-darkGreen text-center">Our Products</h1>
+                    <div className="products mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                        {products.map((product, idx) => (
+                            <ProductCard key={idx} product={product}/>
+                        ))}
                     </div>
-                    <div className="text-center mt-[40px]">
-                        <Button hasIcon={true} className={"bg-darkGreen"}>
+                    <div className="text-center mt-10">
+                        <Button hasIcon={true} className="bg-darkGreen">
                             Load More
                         </Button>
                     </div>

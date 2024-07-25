@@ -15,18 +15,17 @@ const ads = [
     }
 ]
 const Advertisement = () => {
-    return(
-        <section id={"ads"} className="my-[80px]">
-            <div className="container mx-auto px-[32px] xl:px-16 h-full">
-                <div className="ads-content flex-col lg:flex-row flex gap-[36px]">
-                    {
-                        ads.map((ad, idx) => (
-                            <AdCard key={idx} adv={ad} isGreen={idx === 1} />
-                        ))
-                    }
+    return (
+        <section id="ads" className="my-20">
+            <div className="container mx-auto px-8 xl:px-16 h-full">
+                <div className="ads-content flex flex-col lg:flex-row gap-9">
+                    {ads.map((ad, idx) => (
+                        <AdCard key={idx} adv={ad} isGreen={idx === 1}/>
+                    ))}
                 </div>
             </div>
         </section>
+
     )
 }
 

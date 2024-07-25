@@ -1,5 +1,6 @@
 import NavBar from "../components/NavBar.jsx";
 import {Outlet} from "react-router-dom";
+import Footer from "../components/sections/Footer.jsx";
 
 
 const Root = () => {
@@ -9,6 +10,7 @@ const Root = () => {
             <main>
                 <Outlet />
             </main>
+            <Footer />
         </>
     )
 }
