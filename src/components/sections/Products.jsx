@@ -8,7 +8,11 @@ import product6 from "../../assets/img/products/prod6.png";
 import product7 from "../../assets/img/products/prod7.png";
 import product8 from "../../assets/img/products/prod8.png";
 import Button from "../Button.jsx";
-const products = [
+import {useEffect, useState} from "react";
+
+import {fetchAllProducts} from "../../firebase/storage/productsAPI.js";
+
+const productsList = [
     {
         image: product1,
         name: "calabrese broccoli",
@@ -59,7 +63,22 @@ const products = [
     }
 ]
 
+
 const Products = () => {
+
+    const [productsv, setProducts] = useState([]);
+
+    useEffect(() => {
+        const loadProducts = async () => {
+            const productsData = await fetchAllProducts();
+            setProducts(productsData);
+        };
+        loadProducts()
+    }, []);
+
+    console.log(productsv)
+
+
     return (
         <section id="prods" className="my-24">
             <div className="container mx-auto px-4 xl:px-8 h-full">
@@ -67,7 +86,7 @@ const Products = () => {
                     <h3 className="text-lightGreen text-2xl font-tail text-center">Categories</h3>
                     <h1 className="font-bold text-4xl text-darkGreen text-center">Our Products</h1>
                     <div className="products mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {products.map((product, idx) => (
+                        {productsList.map((product, idx) => (
                             <ProductCard key={idx} product={product}/>
                         ))}
                     </div>
