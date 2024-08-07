@@ -43,3 +43,12 @@ nav ul li:not(:last-child) {
         transform: translateX(0);
     }
 }
+
+
+
+/**
+Dashboard styles
+*/
+.d-link {
+    @apply flex items-center gap-2 text-white px-6 py-2
+}
